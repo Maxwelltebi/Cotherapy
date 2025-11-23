@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotherapy - AI Therapist</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-left">
+                <div class="logo-container">
+                    <div class="logo-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 12l2 2 4-4"></path>
+                            <circle cx="12" cy="12" r="10"></circle>
+                        </svg>
+                    </div>
+                    <span class="logo-text">Cotherapy</span>
+                </div>
+            </div>
+            <div class="header-center">
+                <div class="session-info">
+                    <span class="session-title">Therapy Session</span>
+                    <span class="session-subtitle">with Maxwell</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <button class="header-btn" id="newChatBtn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 5v14M5 12h14"></path>
+                    </svg>
+                    New Chat
+                </button>
+                <button class="header-btn" id="settingsBtn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M12 1v6m0 6v6"></path>
+                        <path d="m21 12-6-6-6 6-6-6"></path>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <div class="main-layout">
+            <!-- Sidebar -->
+            <aside class="sidebar" id="sidebar">
+                <div class="sidebar-header">
+                    <h3>Recent Sessions</h3>
+                    <button class="sidebar-toggle" id="sidebarToggle">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 6h18M3 12h18M3 18h18"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="session-list">
+                    <div class="session-item active">
+                        <div class="session-content">
+                            <div class="session-title">Today's Session</div>
+                            <div class="session-preview">Discussing anxiety management...</div>
+                            <div class="session-time">2 hours ago</div>
+                        </div>
+                    </div>
+                    
+                    <div class="session-item">
+                        <div class="session-content">
+                            <div class="session-title">Yesterday</div>
+                            <div class="session-preview">Cognitive behavioral techniques...</div>
+                            <div class="session-time">1 day ago</div>
+                        </div>
+                    </div>
+                    
+                    <div class="session-item">
+                        <div class="session-content">
+                            <div class="session-title">Last Week</div>
+                            <div class="session-preview">Mindfulness exercises...</div>
+                            <div class="session-time">5 days ago</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Chat Area -->
+            <main class="chat-container">
+                <div class="chat-messages" id="chatMessages">
+                    <!-- Welcome Message -->
+                    <div class="message-group ai-message">
+                        <div class="message-avatar">
+                            <div class="avatar-ai">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 12l2 2 4-4"></path>
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="message-content">
+                            <div class="message-header">
+                                <span class="message-sender">Cotherapy AI</span>
+                                <span class="message-time">Now</span>
+                            </div>
+                            <div class="message-text">
+                                <p>Hello Maxwell! Welcome back to your therapy session. I'm here to provide a safe, supportive space for you to explore your thoughts and feelings.</p>
+                                <p>How are you feeling today? What would you like to talk about?</p>
+                            </div>
+                            <div class="message-actions">
+                                <button class="action-btn" title="Copy message">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                </button>
+                                <button class="action-btn" title="Regenerate response">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path>
+                                        <path d="M21 3v5h-5"></path>
+                                        <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path>
+                                        <path d="M3 21v-5h5"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Suggested Prompts -->
+                <div class="suggested-prompts" id="suggestedPrompts">
+                    <div class="prompt-card" data-prompt="I've been feeling anxious lately and would like some coping strategies">
+                        <div class="prompt-icon"></div>
+                        <div class="prompt-text">Help with anxiety</div>
+                    </div>
+                    <div class="prompt-card" data-prompt="I want to work on building better relationships with others">
+                        <div class="prompt-icon"></div>
+                        <div class="prompt-text">Relationship advice</div>
+                    </div>
+                    <div class="prompt-card" data-prompt="I'm struggling with work-life balance and feeling overwhelmed">
+                        <div class="prompt-icon"></div>
+                        <div class="prompt-text">Work-life balance</div>
+                    </div>
+                    <div class="prompt-card" data-prompt="I'd like to practice mindfulness and meditation techniques">
+                        <div class="prompt-icon"></div>
+                        <div class="prompt-text">Mindfulness practice</div>
+                    </div>
+                </div>
+
+                <!-- Input Area -->
+                <div class="input-container">
+                    <div class="input-wrapper">
+                        <button class="attachment-btn" id="attachmentBtn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66L9.64 16.2a2 2 0 0 1-2.83-2.83l8.49-8.48"></path>
+                            </svg>
+                        </button>
+                        
+                        <div class="textarea-container">
+                            <textarea 
+                                id="messageTextarea" 
+                                placeholder="Share what's on your mind..." 
+                                class="message-textarea"
+                                rows="1"
+                            ></textarea>
+                        </div>
+                        
+                        <button class="voice-btn" id="voiceBtn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                                <line x1="12" y1="19" x2="12" y2="23"></line>
+                                <line x1="8" y1="23" x2="16" y2="23"></line>
+                            </svg>
+                        </button>
+                        
+                        <button class="send-btn" id="sendBtn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22,2 15,22 11,13 2,9"></polygon>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="input-footer">
+                        <span class="privacy-note">Your conversations are private and secure</span>
+                        <span class="word-count" id="wordCount">0 words</span>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="/static/script.js"></script>
+</body>
+</html>
