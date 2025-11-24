@@ -3,7 +3,7 @@
   "builds": [
     {
       "src": "public/*",
-      "use": "@vercel/static" 
+      "use": "@vercel/static"  
     },
     {
       "src": "api/main.py",
@@ -13,11 +13,11 @@
   "routes": [
     {
       "src": "/chat",
-      "dest": "api/main.py"  
+      "dest": "api/main.py" 
     },
     {
       "src": "/(.*)",
-      "dest": "public/$1"
+      "dest": "public/$1"  
     }
   ]
 }
