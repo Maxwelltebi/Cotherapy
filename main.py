@@ -41,7 +41,7 @@ app.add_middleware(
 )
 
 #End point
-@app.post("/chat")
+@app.post("/api/chat")
 async def chat_endpoint(req: ChatRequest):
     ai_response = get_ai_response(req.message)
     return {"response": ai_response}
