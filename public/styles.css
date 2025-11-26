@@ -242,6 +242,36 @@ body {
   position: relative;
 }
 
+/* Input area fixed at the bottom */
+.input-container {
+  padding: 20px;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10; /* Ensure it stays on top */
+}
+
+.chat-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-primary);
+  position: relative;
+  padding-bottom: 70px; /* Make space for the fixed input container */
+  overflow-y: auto; /* Allow scrolling */
+}
+
+/* For mobile/tablet - Adjust input area behavior */
+@media (max-width: 768px) {
+  .chat-container {
+    padding-bottom: 60px; /* Adjust space for the fixed input */
+  }
+}
+
+
 /* Chat Messages - Ensures scrolling */
 .chat-messages {
   flex: 1;
