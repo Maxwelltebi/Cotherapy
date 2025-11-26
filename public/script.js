@@ -149,7 +149,7 @@ function addMessage(text, sender) {
   const messageHeader = document.createElement("div")
   messageHeader.className = "message-header"
   messageHeader.innerHTML = `
-    <span class="message-sender">${sender === "ai" ? "Cotherapy AI" : "Maxwell"}</span>
+    <span class="message-sender">${sender === "ai" ? "Cotherapy AI" : "You"}</span>
     <span class="message-time">${new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}</span>
   `
 
