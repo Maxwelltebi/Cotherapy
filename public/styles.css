@@ -27,7 +27,7 @@ body {
   background: var(--bg-primary);
   color: var(--text-primary);
   height: 100vh;
-  overflow: hidden;
+  overflow-y: auto; /* Allows vertical scrolling */
 }
 
 .app-container {
@@ -125,11 +125,22 @@ body {
   color: var(--text-primary);
 }
 
-/* Main Layout */
+/* Main Layout - Allow scrolling */
 .main-layout {
   display: flex;
   flex: 1;
-  overflow: hidden;
+  flex-direction: row;
+  overflow: auto; /* Enable scrolling for the main layout */
+  height: 100%;
+}
+
+/* Mobile/Tablet view adjustments */
+@media (max-width: 768px) {
+  .main-layout {
+    flex-direction: column;
+    height: auto; /* Allow height to grow based on content */
+    overflow-y: auto; /* Allow vertical scrolling */
+  }
 }
 
 /* Sidebar */
@@ -231,14 +242,25 @@ body {
   position: relative;
 }
 
+/* Chat Messages - Ensures scrolling */
 .chat-messages {
   flex: 1;
-  overflow-y: auto;
+  overflow-y: auto; /* Allows messages to scroll vertically */
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 24px;
+  max-height: 80vh; /* Optional: limit the height to leave space for the input */
 }
+
+/* For mobile/tablet - Allow messages to scroll within a limited height */
+@media (max-width: 768px) {
+  .chat-messages {
+    max-height: 60vh; /* Adjust to ensure messages don't overflow the screen */
+    padding: 10px;
+  }
+}
+
 
 /* Messages */
 .message-group {
