@@ -242,7 +242,7 @@ body {
   position: relative;
 }
 
-/* Input area fixed at the bottom */
+/* Input area fixed at the bottom 
 .input-container {
   padding: 20px;
   background: var(--bg-secondary);
@@ -253,6 +253,7 @@ body {
   width: 100%;
   z-index: 10; /* Ensure it stays on top */
 }
+*/
 
 .chat-container {
   flex: 1;
