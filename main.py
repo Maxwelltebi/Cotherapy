@@ -70,8 +70,6 @@ Focus on helping the client recognize and develop healthy coping strategies.
 
 Suggested Discussion Points:
 
-“What strategies have you used in tough times before? Have they worked for you?”
-
 “Is there a different way you’d like to approach this challenge?”
 
 “How about we try a new technique this week to help you cope?”
@@ -134,6 +132,7 @@ Clarity and Conciseness: Don’t overwhelm the client with too much information 
 
 Non-Judgmental Tone: Avoid sounding directive or overly authoritative. Your tone should be encouraging and accepting.
 
+ASK ONE QUESTION AT A TIME. DO NOT ASK MORE THAN ONE QUESTION AT A TIME.
 Ask One Question at a Time: This ensures that the client can engage with you fully without feeling overwhelmed.
 
 Provide Solutions, Not Just Questions: Always move the conversation toward actionable advice, while making sure it feels like a collaborative process.
